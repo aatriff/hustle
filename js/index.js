@@ -12,6 +12,7 @@ angular
     self.querySearch   = querySearch;
     self.selectedItemChanged = selectedItemChanged;
     self.competions = [];
+    self.stats = [];
 
     var allCompetions = $('#competions').data('competions');
 
@@ -21,7 +22,16 @@ angular
 
     function selectedItemChanged(item) {
       if(item){
+        self.stats = [];
         self.competions=[];
+
+        self.stats.push({caption:"ID", value:item.id});
+        self.stats.push({caption:"ФИО", value:item.fio});
+        self.stats.push({caption:"Текущий класс", value:item.class});
+
+        self.stats.push({E:"E", D:"D", C:"C", B:"B", A:"A"});
+        self.stats.push({E:item.e_points, D:item.d_points, C:item.c_points, B:item.b_points, A:item.a_points});
+
         for(i in allCompetions){
           if(allCompetions[i].id === item.id){
             c = allCompetions[i];
@@ -69,7 +79,12 @@ angular
           fio: dancer.fio,
           class: dancer.class,
           value: dancer.fio.toLowerCase(),
-          display: dancer.fio
+          display: dancer.fio,
+          e_points: dancer.e_points,
+          d_points: dancer.d_points,
+          c_points: dancer.c_points,
+          b_points: dancer.b_points,
+          a_points: dancer.a_points,
         };
       });
     }
