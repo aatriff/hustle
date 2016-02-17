@@ -35,9 +35,33 @@ angular
         for(i in allCompetions){
           if(allCompetions[i].id === item.id){
             c = allCompetions[i];
-            self.competions.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points});
+            count = 0;
+            p = "";
+            for(j in allCompetions){
+              if(allCompetions[j].competion === c.competion && allCompetions[j].date === c.date && allCompetions[j].class === c.class && allCompetions[j].result === c.result && allCompetions[j].id != c.id ){
+                count = count + 1;
+                p = allCompetions[j].id;
+              }
+            }
+            if (count != 1)
+              p = "";
+            else {
+              for(d in self.states){
+                if(p === self.states[d].id){
+                  p = self.states[d].fio;
+                  break;
+                }
+              }
+
+            }
+            self.competions.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p});
           }
         }
+
+        if (self.competions.length > 0) {
+          self.competions.unshift({name:"Конкурс", date:"Дата проведения", class:"Класс", result:"Результат", points:"Очки", partner:"Партнер"})
+        }
+
       }
     }
 
