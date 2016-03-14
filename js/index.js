@@ -28,10 +28,12 @@ angular
         self.stats.push({caption:"ID", value:item.id});
         self.stats.push({caption:"ФИО", value:item.fio});
         self.stats.push({caption:"Клуб", value:item.club});
-        self.stats.push({caption:"Текущий класс", value:item.class});
+        self.stats.push({caption:"Текущий класс", value:item.class+'/'+item.class_dnd});
 
         self.stats.push({E:"E", D:"D", C:"C", B:"B", A:"A"});
         self.stats.push({E:item.e_points, D:item.d_points, C:item.c_points, B:item.b_points, A:item.a_points});
+        self.stats.push({Bg:"Bg", Rs:"Rs", M:"M", S:"S", Ch:"Ch"});
+        self.stats.push({Bg:item.bg_points, Rs:item.rs_points, M:item.m_points, S:item.s_points, Ch:item.ch_points});
 
         for(i in allCompetions){
           if(allCompetions[i].id === item.id){
@@ -104,6 +106,7 @@ angular
           fio: dancer.fio,
           club: dancer.club,
           class: dancer.class,
+          class_dnd: dancer.class_dnd,
           value: dancer.fio.toLowerCase(),
           display: dancer.fio,
           e_points: dancer.e_points,
@@ -111,6 +114,11 @@ angular
           c_points: dancer.c_points,
           b_points: dancer.b_points,
           a_points: dancer.a_points,
+          bg_points: dancer.bg_points,
+          rs_points: dancer.rs_points,
+          m_points: dancer.m_points,
+          s_points: dancer.s_points,
+          ch_points: dancer.ch_points,
         };
       });
     }
