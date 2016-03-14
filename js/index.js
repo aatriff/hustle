@@ -27,6 +27,7 @@ angular
 
         self.stats.push({caption:"ID", value:item.id});
         self.stats.push({caption:"ФИО", value:item.fio});
+        self.stats.push({caption:"Клуб", value:item.club});
         self.stats.push({caption:"Текущий класс", value:item.class});
 
         self.stats.push({E:"E", D:"D", C:"C", B:"B", A:"A"});
@@ -101,6 +102,7 @@ angular
         return {
           id: dancer.id,
           fio: dancer.fio,
+          club: dancer.club,
           class: dancer.class,
           value: dancer.fio.toLowerCase(),
           display: dancer.fio,
