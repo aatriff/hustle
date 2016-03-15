@@ -12,9 +12,11 @@ angular
     self.querySearch   = querySearch;
     self.selectedItemChanged = selectedItemChanged;
     self.competions = [];
+    self.dnd = [];
     self.stats = [];
 
     var allCompetions = $('#competions').data('competions');
+    var alldnd = $('#dnd').data('competions');
 
     // ******************************
     // Internal methods
@@ -24,6 +26,7 @@ angular
       if(item){
         self.stats = [];
         self.competions=[];
+        self.dnd=[];
 
         self.stats.push({caption:"ID", value:item.id});
         self.stats.push({caption:"ФИО", value:item.fio});
@@ -63,6 +66,18 @@ angular
 
         if (self.competions.length > 0) {
           self.competions.unshift({name:"Конкурс", date:"Дата проведения", class:"Класс", result:"Результат", points:"Очки", partner:"Партнер"})
+        }
+
+
+        for(i in alldnd){
+          if(alldnd[i].id === item.id){
+            c = alldnd[i];
+            self.dnd.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p});
+          }
+        }
+
+        if (self.dnd.length > 0) {
+          self.dnd.unshift({name:"Конкурс", date:"Дата проведения", class:"Класс", result:"Результат", points:"Очки"})
         }
 
       }
