@@ -70,24 +70,27 @@ angular
             c = allCompetions[i];
             count = 0;
             p = "";
+            p_id = 0;
             for(j in allCompetions){
               if(allCompetions[j].competion === c.competion && allCompetions[j].date === c.date && allCompetions[j].class === c.class && allCompetions[j].result === c.result && allCompetions[j].id != c.id ){
                 count = count + 1;
                 p = allCompetions[j].id;
               }
             }
-            if (count != 1)
+            if (count != 1) {
               p = "";
+            }
             else {
               for(d in self.dancers){
                 if(p === self.dancers[d].id){
                   p = self.dancers[d].fio;
+                  p_id = self.dancers[d].id;
                   break;
                 }
               }
 
             }
-            self.competions.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p});
+            self.competions.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p, partnerId:p_id});
           }
         }
 
