@@ -5,8 +5,22 @@ angular
   function DemoCtrl ($scope) {
     var self = this;
 
+    //Parse get request
+    var param = new Array();
+    var get = location.search;
+    var currentDancer = 0;
+    if(get != '') {
+      tmp = (get.substr(1)).split('&');
+      for(var i = 0; i < tmp.length; i++) {
+        tmp2 = tmp[i].split('=');
+        if(tmp2[0] == 'id'){
+          currentDancer = tmp2[1];
+        }
+      }
+    }
+
     // list of `state` value/display objects
-    self.states        = loadAll();
+    self.dancers        = loadAll();
     self.selectedItem  = null;
     self.searchText    = null;
     self.querySearch   = querySearch;
@@ -18,9 +32,22 @@ angular
     var allCompetions = $('#competions').data('competions');
     var alldnd = $('#dnd').data('competions');
 
+    if(currentDancer != 0){
+      loadById(currentDancer);
+    }
+
     // ******************************
     // Internal methods
     // ******************************
+
+    function loadById(id) {
+      for(i in self.dancers){
+        d = self.dancers[i];
+        if(d.id == parseInt(id)){
+          selectedItemChanged(d);
+        }
+      }
+    }
 
     function selectedItemChanged(item) {
       if(item){
@@ -52,9 +79,9 @@ angular
             if (count != 1)
               p = "";
             else {
-              for(d in self.states){
-                if(p === self.states[d].id){
-                  p = self.states[d].fio;
+              for(d in self.dancers){
+                if(p === self.dancers[d].id){
+                  p = self.dancers[d].fio;
                   break;
                 }
               }
@@ -84,11 +111,11 @@ angular
     }
 
     /**
-     * Search for states... use $timeout to simulate
+     * Search for dancers... use $timeout to simulate
      * remote dataservice call.
      */
     function querySearch (query) {
-      var results = query ? self.states.filter( createFilterFor(query) ) : [];
+      var results = query ? self.dancers.filter( createFilterFor(query) ) : [];
       if (results.length < 10) {
         return results;
       } else {
@@ -110,7 +137,7 @@ angular
     }
 
         /**
-     * Build `states` list of key/value pairs
+     * Build `dancers` list of key/value pairs
      */
     function loadAll() {
       var allDancers = $('#dancers').data('dancers');
