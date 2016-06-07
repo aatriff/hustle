@@ -102,7 +102,7 @@ angular
         for(i in alldnd){
           if(alldnd[i].id === item.id){
             c = alldnd[i];
-            self.dnd.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p});
+            self.dnd.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:""});
           }
         }
 
