@@ -90,6 +90,12 @@ angular
               }
 
             }
+            if(c.result.startsWith('1/')) {
+              c.result+='🏆';
+            }
+            if(c.result.startsWith('2/') || c.result.startsWith('3/')) {
+              c.result+='🏅';
+            }
             self.competions.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:p, partnerId:p_id});
           }
         }
@@ -102,6 +108,12 @@ angular
         for(i in alldnd){
           if(alldnd[i].id === item.id){
             c = alldnd[i];
+            if(c.result.startsWith('1/')) {
+              c.result+='🏆';
+            }
+            if(c.result.startsWith('2/') || c.result.startsWith('3/')) {
+              c.result+='🏅';
+            }
             self.dnd.push({name:c.competion, date:c.date, class:c.class, result:c.result, points:c.points, partner:""});
           }
         }
