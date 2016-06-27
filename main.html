@@ -10,10 +10,10 @@
 	<li ng-repeat="d in dancers | filter:query | limitTo:50" class="navigation-item">
 		<div class="navigation-item-content">
 			<a href="#/profile/{{ d.id }}" ng-click="next()" class="navigation-item-main-text">{{d.display}}</a>
-			<div class="navigation-item-secondary-text">{{ d.club }}</div>
+			<div class="grey-text">{{ d.club }}</div>
 		</div>
 		<div class="navigation-item-right-item">
-			<div class="navigation-item-bubble">{{ d.class }}/{{ d.class_dnd }}</div>
+			<div class="blue-bubble">{{ d.class }}/{{ d.class_dnd }}</div>
 		</div>
 	</li>
 	</ul>
