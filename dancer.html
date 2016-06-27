@@ -1,0 +1,105 @@
+<div class="content">
+	<div class="navigation-topbar">
+		<div class="navigation-secondary-text"># {{dancer.id}}</div>
+		<div class="navigation-main-text">{{dancer.fio}}</div>
+	</div>
+	<ul class="navigation-view">
+		<li class="navigation-info-item">
+			<div class="navigation-info-item-header">Клубная принадлежность</div>
+			<div>{{dancer.club}}</div>
+		</li>
+		<li class="navigation-info-item">
+			<div class="navigation-info-item-header">Баллы</div>
+			<div class="point-table-holder">
+				<div class="navigation-info-item-left-bubble">{{dancer.class}}</div>
+				<table class="points-table">
+					<tr>
+						<td ng-repeat="d in ['E', 'D', 'C', 'B', 'A']" class="table-header" class="table-point-cell">{{d}}</td>
+					</tr>
+					<tr>
+						<td class="table-point-cell">{{dancer.e_points}}</td>
+						<td class="table-point-cell">{{dancer.d_points}}</td>
+						<td class="table-point-cell">{{dancer.c_points}}</td>
+						<td class="table-point-cell">{{dancer.b_points}}</td>
+						<td class="table-point-cell">{{dancer.a_points}}</td>
+					</tr>
+				</table>
+			</div>
+			<div class="point-table-holder">
+				<div class="navigation-info-item-left-bubble">{{dancer.class_dnd}}</div>
+				<table class="points-table">
+					<tr>
+						<td ng-repeat="d in ['Bg', 'Rs', 'M', 'S', 'Ch']" class="table-header" class="table-point-cell">{{d}}</td>
+					</tr>
+					<tr>
+						<td class="table-point-cell">{{dancer.bg_points}}</td>
+						<td class="table-point-cell">{{dancer.rs_points}}</td>
+						<td class="table-point-cell">{{dancer.m_points}}</td>
+						<td class="table-point-cell">{{dancer.s_points}}</td>
+						<td class="table-point-cell">{{dancer.ch_points}}</td>
+					</tr>
+				</table>
+			</div>
+		</li>
+		<li class="navigation-info-item">
+			<div class="navigation-info-item-header">Выступления в классике</div>
+			<ul class="inner_ul">
+				<li ng-repeat="r in results" class="navigation-item-wo-intend">
+					<div class="navigation-item-content">
+						<div class="navigation-item-right-item">
+							<div class="navigation-item-bubble">
+								{{r.class}}
+							</div>
+							<div ng-if="r.points != 0" class="points-bubble">
+								+{{r.points}}
+							</div>
+						</div>
+					</div>
+					<div class="navigation-item-content-middle">
+						<div class="navigation-item-main-text">
+							{{r.competion_name}}
+						</div>
+						<div class="navigation-item-secondary-text">
+							{{r.competion_date}}
+						</div>
+					</div>
+					<div class="navigation-item-content-middle">
+						<div class="navigation-item-secondary-text">
+							{{r.place}}
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+		<li class="navigation-info-item">
+			<div class="navigation-info-item-header">Выступления в JnJ</div>
+			<ul class="inner_ul">
+				<li ng-repeat="r in results_jnj" class="navigation-item-wo-intend">
+					<div class="navigation-item-content">
+						<div class="navigation-item-right-item">
+							<div class="navigation-item-bubble">
+								{{r.class}}
+							</div>
+							<div ng-if="r.points != 0" class="points-bubble">
+								+{{r.points}}
+							</div>
+						</div>
+					</div>
+					<div class="navigation-item-content-middle">
+						<div class="navigation-item-main-text">
+							{{r.competion_name}}
+						</div>
+						<div class="navigation-item-secondary-text">
+							{{r.competion_date}}
+						</div>
+					</div>
+					<div class="navigation-item-content-middle">
+						<div class="navigation-item-secondary-text">
+							{{r.place}}
+						</div>
+					</div>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div> 

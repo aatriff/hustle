@@ -1,0 +1,199 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+  font-family: helvetica;
+  font-weight: 100;
+  font-size: 14px;
+  margin: 0 auto;
+  background: #FFFFFF;
+}
+
+.inner_ul {
+  overflow-y: auto;
+  padding: 5px;
+  margin-left:-20px;
+  margin-top: -10px;
+}
+
+/*Поле ввода для поиска всегд вверху экрана*/
+.search-bar{
+  left: 0;
+  right: 0;
+  top:0 ;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 3000;
+}
+
+/*Стиль поля поиска*/
+.search-input-container {
+  width: 100%;
+}
+.search-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  font-family: calibri light; 
+}
+
+/*Класс для элемента за полем поиска*/
+.dummy {
+  margin-top: 90px;
+}
+
+/*Список с элементами navigation view*/
+.navigation-view {
+  overflow-y: auto;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 5px;
+}
+
+/*Группа стилей для простой ячейки в navigation view*/
+.navigation-item {
+  display: table;
+  list-style: none; 
+  padding: 10px;
+  border: 1px solid #CCC;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+  margin: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.navigation-item-wo-intend {
+  display: table;
+  list-style: none; 
+  padding: 10px;
+  margin: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.navigation-item-content{
+  display: table-cell;
+  vertical-align: middle;
+}
+.navigation-item-main-text {
+  text-decoration: none;
+  color: black;
+}
+.navigation-item-secondary-text {
+  color: #848484;
+}
+.navigation-item-right-item{
+  display: table-cell;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+}
+.navigation-item-bubble{
+  background: #00ACF0 ;
+  color: #fff;
+
+  font-size: 15px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.points-bubble{
+  float: left;
+  background: rgba(132,192,90,1);
+  color: #FFFFFF;
+
+  margin-top: -13px;
+  margin-left: 22px; 
+
+  font-size: 10px;
+  line-height: 20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.navigation-item-content-middle{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.navigation-info-item{
+  list-style: none; 
+  padding: 10px;
+  border: 1px solid #CCC;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+.navigation-info-item-header{
+  color: #848484;
+  padding-bottom: 20px;
+}
+.navigation-info-item-left-bubble{
+  float: left;
+  position: relative;
+
+  background: #00ACF0 ;
+  color: #fff;
+
+  display: inline-block;
+  font-size: 15px;
+  line-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 200;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.point-table-holder{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.points-table{
+  padding-left: 30px;
+}
+
+.table-header {
+  color: #848484;
+}
+.table-point-cell{
+  width: 30px;
+}
+
+.navigation-topbar {
+  background: rgba(0, 172,240,1);
+}
+.navigation-main-text {
+  padding: 10px;
+  color: white;
+  font-size: 19px;
+  font-family: calibri light; 
+}
+.navigation-secondary-text {
+  color: white;
+  padding-top: 10px;
+  padding-left: 10px;
+}
