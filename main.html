@@ -6,7 +6,7 @@
       </md-input-container>
 	</div>
 	<div class="dummy"></div>
-	<ul class="navigation-view" class="main_ul">
+	<ul class="navigation-view">
 	<li ng-repeat="d in dancers | filter:query | limitTo:50" class="navigation-item">
 		<div class="navigation-item-content">
 			<a href="#/profile/{{ d.id }}" ng-click="next()" class="navigation-item-main-text">{{d.display}}</a>

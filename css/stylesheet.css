@@ -66,8 +66,8 @@ body {
 /*Список с элементами navigation view*/
 .navigation-view {
   overflow-y: auto;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left:10px;
+  padding-right:10px;
   padding-top: 5px;
 }
 .navigation-item-wo-border{
@@ -126,7 +126,8 @@ body {
   padding: 10px;
   border: 1px solid #CCC;
   box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   width: 100%;
   box-sizing: border-box;
   cursor: pointer;
@@ -176,15 +177,16 @@ body {
 /*Стиль поля поиска*/
 .search-input-container {
   width: 100%;
+  margin-bottom: 0px;
 }
 .search-input {
   width: 100%;
-  font-size: 16px;
-  padding: 15px;
+  font-size: 14px;
+  padding: 10px;
   font-family: calibri light; 
 }
 
 /*Класс для элемента за полем поиска*/
 .dummy {
-  margin-top: 90px;
+  margin-top: 75px;
 }
