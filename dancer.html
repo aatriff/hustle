@@ -41,61 +41,37 @@
 				</table>
 			</div>
 		</li>
-		<li class="navigation-item-wo-border">
-			<div class="navigation-item-header grey-text">Выступления в классике</div>
-			<ul class="inner_ul">
-				<li ng-repeat="r in results" class="navigation-item-wo-intend">
-					<div class="navigation-item-content">
-						<div class="blue-bubble">
-							{{r.class}}
-						</div>
-						<div ng-if="r.points != 0" class="green-bubble points-bubble-position">
-							+{{r.points}}
-						</div>
-					</div>
-					<div class="navigation-item-middle-item">
-						<div class="navigation-item-main-text">
-							{{r.competion_name}}
-						</div>
-						<div class="grey-text">
-							{{r.competion_date}}
-						</div>
-					</div>
-					<div class="navigation-item-middle-item">
-						<div class="grey-text">
-							{{r.place}}
-						</div>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li class="navigation-item-wo-border">
-			<div class="navigation-item-header grey-text">Выступления в JnJ</div>
-			<ul class="inner_ul">
-				<li ng-repeat="r in results_jnj" class="navigation-item-wo-intend">
-					<div class="navigation-item-content">
-						<div class="blue-bubble">
-							{{r.class}}
-						</div>
-						<div ng-if="r.points != 0" class="green-bubble points-bubble-position">
-							+{{r.points}}
-						</div>
-					</div>
-					<div class="navigation-item-middle-item">
-						<div class="navigation-item-main-text">
-							{{r.competion_name}}
-						</div>
-						<div class="grey-text">
-							{{r.competion_date}}
-						</div>
-					</div>
-					<div class="navigation-item-middle-item">
-						<div class="grey-text">
-							{{r.place}}
-						</div>
-					</div>
-				</li>
-			</ul>
+		<li ng-repeat="style in results" class="navigation-item-wo-border">
+			<div  class="navigation-item-header grey-text">{{style.type}}</div>
+			<md-tabs md-border-bottom="0" md-dynamic-height md-border-bottom>
+				<md-tab ng-repeat="cl in style.results" label="{{cl.class}}">
+					<ul class="inner_ul">
+						<li ng-repeat="r in cl.results" class="navigation-item-wo-intend">
+							<div class="navigation-item-content">
+								<div class="blue-bubble">
+									{{r.class}}
+								</div>
+								<div ng-if="r.points != 0" class="green-bubble points-bubble-position">
+									+{{r.points}}
+								</div>
+							</div>
+							<div class="navigation-item-middle-item">
+								<div class="navigation-item-main-text">
+									{{r.competion_name}}
+								</div>
+								<div class="grey-text">
+									{{r.competion_date}}
+								</div>
+							</div>
+							<div class="navigation-item-middle-item">
+								<div class="grey-text">
+									{{r.place}}
+								</div>
+							</div>
+						</li>
+					</ul>
+					</md-tab>
+			</md-tabs>
 		</li>
 	</ul>
 </div> 
