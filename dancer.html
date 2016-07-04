@@ -46,7 +46,7 @@
 			<md-tabs md-border-bottom="0" md-dynamic-height md-border-bottom>
 				<md-tab ng-repeat="cl in style.results" label="{{cl.class}}">
 					<ul class="inner_ul">
-						<li ng-repeat="r in cl.results" class="navigation-item-wo-intend">
+						<li ng-repeat="r in cl.results | orderBy: '-competion_date'" class="navigation-item-wo-intend">
 							<div class="navigation-item-content">
 								<div class="blue-bubble">
 									{{r.class}}
