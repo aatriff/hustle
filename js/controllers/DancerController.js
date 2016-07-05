@@ -14,7 +14,7 @@ app.controller('dancerController', ['$scope', '$routeParams', function($scope, $
   }
   $scope.results.push({type:"Выступления в классике", results:ares});
 
-  classes = ['Bg','Rs','M','S','Ch'];
+  classes = ['Bg','RS','M','S','Ch'];
   ares = [];
   for(var i in classes) {
     res = loadResultsJnJ($routeParams.dancerId, classes[i]);
