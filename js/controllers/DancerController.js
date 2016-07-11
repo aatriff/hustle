@@ -59,9 +59,10 @@ app.controller('dancerController', ['$scope', '$routeParams', function($scope, $
           if(allResults[i].competion_id === allCompetions[j].id && 'pair' === allCompetions[j].type){
             var partner = "";
             if (allResults[i].partner!=0){
+              partner_id = allResults[i].partner;
               partner = findDancerById(allResults[i].partner).fio;
             }
-            results.push({competion_name: allCompetions[j].name, competion_date: allCompetions[j].date, class: allResults[i].class, points: allResults[i].points, place: allResults[i].result, partner: partner});
+            results.push({competion_name: allCompetions[j].name, competion_date: allCompetions[j].date, class: allResults[i].class, points: allResults[i].points, place: allResults[i].result, partner_id: partner_id, partner: partner});
           }
         }
       }
