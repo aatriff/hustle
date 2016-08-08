@@ -58,6 +58,7 @@ app.controller('dancerController', ['$scope', '$routeParams', function($scope, $
         for(var j in allCompetions) {
           if(allResults[i].competion_id === allCompetions[j].id && 'pair' === allCompetions[j].type){
             var partner = "";
+            partner_id = 0;
             if (allResults[i].partner!=0){
               partner_id = allResults[i].partner;
               partner = findDancerById(allResults[i].partner).fio;
